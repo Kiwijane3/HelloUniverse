@@ -1,5 +1,6 @@
 import Foundation
 
-if let url = Bundle.module.url(forResource: "message", withExtension: "txt"), let data = try? Data.init(contentsOf: url), let message = String(data: data, encoding: .utf8) {
-	print(message)
-}
+let path = Bundle.main.path(forResource: "message", ofType: "txt")
+let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+let string = String(data: data, encoding: .utf8)
+print(string)
