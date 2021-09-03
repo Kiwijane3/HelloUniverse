@@ -20,7 +20,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "HelloUniverse",
-            dependencies: []),
+            dependencies: [],
+            resources: [
+		.copy("message.txt")
+	]),
         .testTarget(
             name: "HelloUniverseTests",
             dependencies: ["HelloUniverse"]),
